@@ -1,0 +1,43 @@
+<!-- Execute Factory Contract Function -->
+<div class="hero-unit">
+  <h1>Factory Contract Invocations</h1>
+  <!-- create factory instance -->
+  <div class="sidekick">
+    <span><button onclick="doFactorySelection()">Retrieve factory instance</button></span>
+    <input id="contract_address_optional" type="text" value="" />
+  </div>
+  <%= render partial: "result", locals: {id_ext: "", is_sent: false, is_address: false}%>
+  <!-- Get factory instance admin-->
+  <div class="sidekick">
+    <span><button onclick="doFactoryGetAdmin()">get Admin</button></span>
+  </div>
+  <%= render partial: "result", locals: {id_ext: "admin", is_sent: false, is_address: false}%>
+  <!-- Get factory instance admin-->
+  <div class="sidekick">
+    <span><button onclick="doFactoryGetCarpoolingAddressUsingIndex()">get carpooling using index</button></span>
+    <input id="index_carpooling_parameter" size="6" type="text" value="0" />
+  </div>
+  <%= render partial: "result", locals: {id_ext: "getCarpoolingAddressUsingIndex", is_sent: false, is_address: false}%>
+  <!-- Create carpooling -->
+  <div class="sidekick">
+    <span><button onclick="doFactoryCreateCarpooling()">Create carpooling</button></span>
+  </div>
+  <%= render partial: "result", locals: {id_ext: "createCarpooling", is_sent: true, is_address: false}%>
+</div>
+<!-- contract.myEvent & allEvent -->
+<div class="hero-unit">
+  <h1>Factory contract Events</h1>
+  <!-- Watch events from specific contract instance -->
+  <!-- contract event.get -->
+  <div class="sidekick">
+    <h1>Contract Instance Logs</h1>
+    <span><button onclick="doContractEventGet()">event.Get()</button></span>
+  </div>
+  <div class="sidekick">
+    <h1>Logs</h1>
+    <span>Recieve Count:</span><span id="get_contract_instance_log_count" class="notready">....</span>
+    <ol id="get_contract_instance_logs_list">
+      <!-- This is where the events will be added -->
+    </ol>
+  </div>
+</div>

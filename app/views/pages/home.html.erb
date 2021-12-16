@@ -1,2 +1,27 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<body>
+  <!--[if lt IE 10]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+  <!-- top -->
+  <div class="item top">
+    <a href="https://medium.com/@Olivier-Delfosse/how-to-unleash-carpooling-potential-decentralization-f1db8b308d2d" >
+      <img class="logo">
+    </a>
+  </div>
+  <!-- About -->
+  <div class="item about">
+    <img class="workbench">
+    <p class="text">
+      Carpooling App: UI to test features.
+      <ul>
+        <li>To connect with geth or TestRPC provide URL and hit connect</li>
+        <li>To connect with MetaMask - delete the url and "connect"</li>
+      </ul>
+    </p>
+  </div>
+  <%= render partial: "connect"%>
+  <%= render partial: "deploy_factory"%>
+  <%= render partial: "invoc_factory"%>
+  <%= render partial: "accounts"%>
+  <%= render partial: "transactions"%>
+</body>

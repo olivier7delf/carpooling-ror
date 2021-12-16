@@ -1,0 +1,268 @@
+{
+  "contractName": "metaVariables",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/contracts/MetaVariable.sol\":\"metaVariables\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/MetaVariable.sol\":{\"keccak256\":\"0x948b181ba11cfffb23ad1063ff439973f0647f550d5a612c4e7def515c550ab4\",\"urls\":[\"bzz-raw://e654c1320decaba760ad65eb5f264d8af25b3091ff5122ab89c8b488eb5fb337\",\"dweb:/ipfs/QmfWpYF1uJyk2QSqHsUd7pja9CRGUEbdz2oA7x4Hg8SdRk\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603e80601d6000396000f3fe6080604052600080fdfea265627a7a723158205a6488a204e61e43807b1c0f9c12dd1128a9d357f0b5844f063ab1195dcbb73164736f6c63430005100032",
+  "deployedBytecode": "0x6080604052600080fdfea265627a7a723158205a6488a204e61e43807b1c0f9c12dd1128a9d357f0b5844f063ab1195dcbb73164736f6c63430005100032",
+  "sourceMap": "89:300:7:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;89:300:7;;;;;;;",
+  "deployedSourceMap": "89:300:7:-;;;;;",
+  "source": "// SPDX-License-Identifier: MIT\npragma solidity = 0.5.16;\n\n// used by multiple contracts\ninterface metaVariables {\n    enum State{pending, booked, validated, paid, conflicted} // of a carpooling\n    enum ModeConflict{generous, normal, tyranic}  \n    // generous: in case of conflict, passenger get back their money\n    // normal: it depends\n    // tyranic: the conflict owner will decide\n}",
+  "sourcePath": "/Users/olivier/Documents/code/olivier7delf/carpooling-ror/contracts/MetaVariable.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/MetaVariable.sol",
+    "exportedSymbols": {
+      "metaVariables": [
+        1839
+      ]
+    },
+    "id": 1840,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1828,
+        "literals": [
+          "solidity",
+          "=",
+          "0.5",
+          ".16"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "32:25:7"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 1839,
+        "linearizedBaseContracts": [
+          1839
+        ],
+        "name": "metaVariables",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "metaVariables.State",
+            "id": 1834,
+            "members": [
+              {
+                "id": 1829,
+                "name": "pending",
+                "nodeType": "EnumValue",
+                "src": "130:7:7"
+              },
+              {
+                "id": 1830,
+                "name": "booked",
+                "nodeType": "EnumValue",
+                "src": "139:6:7"
+              },
+              {
+                "id": 1831,
+                "name": "validated",
+                "nodeType": "EnumValue",
+                "src": "147:9:7"
+              },
+              {
+                "id": 1832,
+                "name": "paid",
+                "nodeType": "EnumValue",
+                "src": "158:4:7"
+              },
+              {
+                "id": 1833,
+                "name": "conflicted",
+                "nodeType": "EnumValue",
+                "src": "164:10:7"
+              }
+            ],
+            "name": "State",
+            "nodeType": "EnumDefinition",
+            "src": "119:56:7"
+          },
+          {
+            "canonicalName": "metaVariables.ModeConflict",
+            "id": 1838,
+            "members": [
+              {
+                "id": 1835,
+                "name": "generous",
+                "nodeType": "EnumValue",
+                "src": "217:8:7"
+              },
+              {
+                "id": 1836,
+                "name": "normal",
+                "nodeType": "EnumValue",
+                "src": "227:6:7"
+              },
+              {
+                "id": 1837,
+                "name": "tyranic",
+                "nodeType": "EnumValue",
+                "src": "235:7:7"
+              }
+            ],
+            "name": "ModeConflict",
+            "nodeType": "EnumDefinition",
+            "src": "199:44:7"
+          }
+        ],
+        "scope": 1840,
+        "src": "89:300:7"
+      }
+    ],
+    "src": "32:357:7"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "project:/contracts/MetaVariable.sol",
+      "exportedSymbols": {
+        "metaVariables": [
+          1839
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "=",
+            "0.5",
+            ".16"
+          ]
+        },
+        "id": 1828,
+        "name": "PragmaDirective",
+        "src": "32:25:7"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "interface",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            1839
+          ],
+          "name": "metaVariables",
+          "scope": 1840
+        },
+        "children": [
+          {
+            "attributes": {
+              "canonicalName": "metaVariables.State",
+              "name": "State"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "pending"
+                },
+                "id": 1829,
+                "name": "EnumValue",
+                "src": "130:7:7"
+              },
+              {
+                "attributes": {
+                  "name": "booked"
+                },
+                "id": 1830,
+                "name": "EnumValue",
+                "src": "139:6:7"
+              },
+              {
+                "attributes": {
+                  "name": "validated"
+                },
+                "id": 1831,
+                "name": "EnumValue",
+                "src": "147:9:7"
+              },
+              {
+                "attributes": {
+                  "name": "paid"
+                },
+                "id": 1832,
+                "name": "EnumValue",
+                "src": "158:4:7"
+              },
+              {
+                "attributes": {
+                  "name": "conflicted"
+                },
+                "id": 1833,
+                "name": "EnumValue",
+                "src": "164:10:7"
+              }
+            ],
+            "id": 1834,
+            "name": "EnumDefinition",
+            "src": "119:56:7"
+          },
+          {
+            "attributes": {
+              "canonicalName": "metaVariables.ModeConflict",
+              "name": "ModeConflict"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "generous"
+                },
+                "id": 1835,
+                "name": "EnumValue",
+                "src": "217:8:7"
+              },
+              {
+                "attributes": {
+                  "name": "normal"
+                },
+                "id": 1836,
+                "name": "EnumValue",
+                "src": "227:6:7"
+              },
+              {
+                "attributes": {
+                  "name": "tyranic"
+                },
+                "id": 1837,
+                "name": "EnumValue",
+                "src": "235:7:7"
+              }
+            ],
+            "id": 1838,
+            "name": "EnumDefinition",
+            "src": "199:44:7"
+          }
+        ],
+        "id": 1839,
+        "name": "ContractDefinition",
+        "src": "89:300:7"
+      }
+    ],
+    "id": 1840,
+    "name": "SourceUnit",
+    "src": "32:357:7"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.3",
+  "updatedAt": "2021-12-14T09:19:45.496Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

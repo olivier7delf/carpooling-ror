@@ -1,0 +1,14 @@
+<!-- Deploy Contracts -->
+  <div class="hero-unit">
+    <h1> Deploy Factory Carpooling</h1>
+    <!-- deploy the contract -->
+    <div class="sidekick">
+      <h1>Deploy</h1>
+      <p>Gas (Wei)
+      <input type="text" id="deployment_estimatedgas" size="10" value="6000000" />
+      <button onclick="doDeployContract()">Deploy Contract</button><br></p>
+    </div>
+
+    <!-- deploy result -->
+    <%= render partial: "result", locals: {id_ext: "deploy", is_sent: true, is_address: true}%>
+</div>

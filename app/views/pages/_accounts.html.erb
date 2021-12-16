@@ -1,0 +1,49 @@
+<!-- Accounts -->
+<div class="hero-unit">
+    <h1>Accounts</h1>
+    <!-- accounts list -->
+    <div class="sidekick">
+        <h1>Accounts</h1>
+        <span>Count</span><span class='notready' id='accounts_count'>...</span>
+        <span>Coinbase</span><span class='notready' id='coinbase'>...</span>
+        <span>Default A/c</span><span class='notready' id='defaultAccount'>...</span>
+        <ol id="accounts_list">
+        <!-- This is where the accounts will be added -->
+        </ol>
+        <span><button onclick="doGetAccounts()">Get Accounts</button></span>
+
+        <br>
+        <span>Password</span><input id="account_new_password" type="text" value="password" /></span>
+        <br>
+        <span><button onclick="createAccount()">Create Account</button></span>
+        <span>Account Address</span><span class='notready' id='account_created_address'>...</span>
+    </div>
+    <!-- account balances -->
+    <div class="sidekick">
+        <h1>Balances (false order when mining !)</h1>
+        <ol id="account_balances_list">
+        <!-- This is where the accounts balances will be added -->
+        </ol>
+    </div>
+</div>
+
+<!-- Lock / Unlock Account -->
+<div class="hero-unit">
+    <h1>UnLock &amp; Lock Accounts</h1>
+    <!-- unlock the account -->
+    <div class="sidekick">
+        <h1>Unlock Account</h1>
+        <span>To</span>
+        <span><select id="select_to_unlock_account"></select></span>
+        <br>
+        <span>Password</span><input id="unlock_account_password" type="text" value="password" /></span>
+        <br>
+        <span><button onclick="doUnlockAccount()">UnLock Account</button></span>  
+
+        <span><button onclick="doLockAccount()">Lock Account</button></span>
+    </div>
+    <div class="sidekick">
+        <h1>Un/Lock Result</h1>
+        <p class="notready" id="lock_unlock_result">...</p>
+    </div>
+</div>

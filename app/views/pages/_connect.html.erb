@@ -1,0 +1,36 @@
+<!-- Setup & Version -->
+<div class="hero-unit">
+    <h1>Connect</h1>
+
+    <!-- setup  -->
+    <div class="sidekick">
+        <h1>Setup</h1>
+        <p class='notready' id='connect_status'>Not connected</p>
+        <span>Provider</span>
+        <span><input type='text' id='provider_url' value='http://localhost:8545'></span>
+        
+        <button onclick="doConnect()">Connect</button>
+        
+        <br>
+        
+        <button onclick="doGetNodeStatus()">Node Status</button>
+        
+        <span id="get_peer_count" class="notready">...</span>
+        <span id="get_is_syncing" class="notready">...</span>
+        <span id="get_is_mining" class="notready">...</span>
+        <br>
+        <button onclick="doCoinbaseCall()">Coinbase</button>
+        
+        <span><button onclick="doSetDefaultAccount()">Set Default Account</button></span>
+        <span><input type='text' id='edit_default_account_address' value=''></span>
+    </div>
+    <!-- version -->
+    <div class="sidekick">
+        <h1>Version</h1>
+        <pre id='version_information'></pre>
+        <br>
+        <span id="coinbase_address" class="notready">...</span>
+        <br>
+        <span id="default_account_address" class="notready">...</span>
+    </div>
+</div>

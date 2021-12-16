@@ -1,0 +1,16 @@
+<div class="sidekick">
+  <h1>Result</h1>
+  <span id=<%= "invoke_details_"+id_ext %>>...</span>
+
+    <% if is_sent==true %>
+        <br>
+    <span>Transaction Hash</span>
+    <span id=<%= "invoke_contracttransactionhash_"+id_ext %> class="notready">...</span>
+    <a href="" id=<%= "invoke_contracttransactionhash_link_"+id_ext %> target="_blank"></a>
+  <% end %>
+  <% if is_address==true %>
+    <span>Address</span>
+    <span id=<%= "invoke_contractaddress_deploy" %> class="notready">...</span>
+    <a href="" id=<%= "invoke_contracttransactionhash_link_"+id_ext %> target="_blank"></a>
+  <% end %>
+</div>
