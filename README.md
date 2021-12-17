@@ -5,6 +5,7 @@ This project integrates notions of:
 - Web using web3.js and Ruby on Rails
 
 The UI is meant to test functionalities in test and production environments.
+If you are interested in UI design with RoR & bootstrap (No blockchain): https://github.com/olivier7delf/Bro-Bet
 
 Tech:
 - Blockchain:
