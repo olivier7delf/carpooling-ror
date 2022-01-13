@@ -1,6 +1,48 @@
-import {setExecuteResultUI} from "./utils.js";
+import {setExecuteResultUI, createContractInstance} from "./utils.js";
 import {accounts} from "./accounts";
 
+const carpooling_truffleFile = require('../../../build/contracts/Carpooling.json');
+export var carpooling_abiDefinition = carpooling_truffleFile['abi'];
+export var carpooling_bytecode = carpooling_truffleFile['bytecode'];
+
+var address;
+var CarpoolingInstance;
+
+
+// get the owner of the carpooling instance
+window.doCarpoolingGetOwner = function() {
+    try {
+        CarpoolingInstance.methods.owner().call().then(function(result){
+            setExecuteResultUI('Call','owner','', result,'',false);
+        })
+    }
+    catch(error) {
+        console.log(error);
+        setExecuteResultUI('Call','owner','', "Error, check your contract address. "+error,'',true);
+    }
+}
+
+// get the number of available slots of the carpooling instance
+window.doCarpoolingGetNAvailableSlot = function() {
+    try {
+        CarpoolingInstance.methods.nAvailableSlot().call().then(function(result){
+            setExecuteResultUI('Call','nAvailableSlot','', result,'',false);
+        })
+    }
+    catch(error) {
+        console.log(error);
+        setExecuteResultUI('Call','nAvailableSlot','', "Error, check your contract address. "+error,'',true);
+    }
+}
+
+
+
+
+// Use the address to retrieve the existing instance of a factoryCarpooling
+window.doCarpoolingSelection = function()  {
+    address = document.getElementById('carpooling_address').value;
+    CarpoolingInstance = createContractInstance(address, carpooling_abiDefinition, "carpooling");   
+}
 
 function getCarpoolingAddressUsingIndex(instance, index){
     instance.methods.getCarpoolingAddressUsingIndex(index).call()

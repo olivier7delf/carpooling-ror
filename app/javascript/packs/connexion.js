@@ -5,6 +5,7 @@ export var nodeType;
 var provider;
 
 
+
 const ethEnabled = async () => {
   if (window.ethereum) {
     await window.ethereum.send('eth_requestAccounts');
@@ -40,7 +41,6 @@ window.addEventListener('load', function() {
     } else {
         setData('connect_status','Not Connected', true);
     }
-    if(!autoRetrieveFlag)  return;
 
     if(nodeType != 'metamask'){
         doGetNodeStatus();
@@ -98,6 +98,5 @@ async function    setWeb3Version() {
         else {
             setData('get_is_mining','Is mining: '+result,(result == 0));
         }
-    });
-    
+    });   
 }
