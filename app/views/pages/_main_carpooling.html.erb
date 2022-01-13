@@ -1,0 +1,25 @@
+
+
+
+<!-- Execute Factory Contract Function -->
+<div class="hero-unit">
+  <h1>Carpooling Invocations</h1>
+  <!-- create carpooling instance -->
+  <div class="sidekick">
+    <span><button onclick="doCarpoolingSelection()">Retrieve carpooling instance</button></span>
+    <input id="carpooling_address" type="text" value="" />
+  </div>
+  <%= render partial: "result", locals: {id_ext: "carpooling", is_sent: false, is_address: false}%>
+    <!-- Get carpooling instance owner-->
+  <div class="sidekick">
+    <span><button onclick="doCarpoolingGetOwner()">get Owner</button></span>
+  </div>
+  <%= render partial: "result", locals: {id_ext: "owner", is_sent: false, is_address: false}%>
+
+  <!-- Get carpooling instance nAvailableSlot-->
+  <div class="sidekick">
+    <span><button onclick="doCarpoolingGetNAvailableSlot()">get nAvailableSlot</button></span>
+  </div>
+  <%= render partial: "result", locals: {id_ext: "nAvailableSlot", is_sent: false, is_address: false}%>
+</div>
+

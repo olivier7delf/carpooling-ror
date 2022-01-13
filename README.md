@@ -22,6 +22,8 @@ Tech:
   - Bundler version 2.2.27
   - yarn 1.22.13
 
+(My others Blockchain projects: https://github.com/olivier7delf/Blockchain-content-table)
+
 ## Contents
 1. Installation and folders of interest
 2. Description and functionnalities
@@ -94,14 +96,14 @@ CarpoolingFactory
 # 3) Next step: TODO
 
 VIEWS:
-Split:
+Split in 3 pages:
 - home: account, send, unlock
 - carpooling factory: factory related topics + get carpooling index (easier for testing...)
 - carpooling: carpooling related topics
 
 CarpoolingFactory: 
 - add services
-- createCarpooling: allow user parammeter in input
+- createCarpooling: allow user parameter as input
 ...
 
 Carpooling 

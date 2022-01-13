@@ -7,9 +7,8 @@ export var factory_bytecode = factory_truffleFile['bytecode'];
 var address;
 var FactoryInstance;
 
-import {addEventListItem, clearList, setPolygoncanLink, setExecuteResultUI, setData} from "./utils.js";
+import {addEventListItem, clearList, setPolygoncanLink, setExecuteResultUI, setData, createContractInstance} from "./utils.js";
 import {getCarpoolingAddressUsingIndex, createCarpooling} from "./carpooling.js";
-
 
 window.doDeployContract = async function()   {
     var gasAllowed = document.getElementById('deployment_estimatedgas').value;
@@ -33,33 +32,13 @@ window.doDeployContract = async function()   {
             console.log("newContractInstance.options=", newContractInstance.options);
             // console.log("newContractInstance.options.address=", newContractInstance.options.address);
             setData("invoke_contractaddress_deploy", newContractInstance.options.address, false)
-            // document.getElementById('invoke_contractaddress_deploy').value=newContractInstance.options.address;
-            setPolygoncanLink('contractaddress_link','address',newContractInstance.options.address);
+            setPolygoncanLink('invoke_contracttransactionhash_link_deploy','address',newContractInstance.options.address);
+            
             // On the client side, allow the user to download the address of its contract
             // Then, he can use it to retrieve his contract with the value he had set...
             var myFile = new Blob([newContractInstance.options.address], {type: "text/plain;charset=utf-8"});
             FileSaver.saveAs(myFile, "ADDRESS_CONTRACTS.txt");
         });
-}
-
-// Utility method for creating the contract instance
-function createContractInstance(address, abi){
-    // var    address = addr;
-    console.log("address", address)
-    
-    var instance;
-    try {
-        instance = new web3.eth.Contract(abi, address);
-        instance.methods.admin().call()
-        setExecuteResultUI('Call','','', "Instance created",'',false);
-    }
-    catch(error) {
-        setExecuteResultUI('Call','','', "Error, wrong address ?!",'',true);
-        console.log(error.message);
-        instance = null;
-    }
-
-    return instance;
 }
 
 // get the admin of the carpooling factory instance
@@ -78,7 +57,7 @@ function getAdmin(instance){
 // Use the address to retrieve the existing instance of a factoryCarpooling
 window.doFactorySelection = function()  {
     address = document.getElementById('contract_address_optional').value;
-    FactoryInstance = createContractInstance(address, factory_abiDefinition);   
+    FactoryInstance = createContractInstance(address, factory_abiDefinition, "");   
     getAdmin(FactoryInstance);
 }
 
@@ -103,7 +82,7 @@ window.doFactoryCreateCarpooling = function()  {
 // Gets the logs for the specific contract instance
 window.doContractEventGet = async function() {
     var contractAddress = document.getElementById('contract_address_optional').value
-    var contractInstance = createContractInstance(contractAddress, factory_abiDefinition);
+    var contractInstance = createContractInstance(contractAddress, factory_abiDefinition, "");
 
     clearList('get_contract_instance_logs_list');
     setData('get_contract_instance_log_count', '---', true);

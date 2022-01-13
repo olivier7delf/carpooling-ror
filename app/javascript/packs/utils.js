@@ -4,11 +4,39 @@
 
  import {contract_abidefinition, contract_bytecode} from "./factory.js";
 
- import {nodeType} from "./application.js";
+ import {nodeType} from "./connexion.js";
 
 
 // Holds the base URL for mumbai.polygonscan
 var mumbaiScanBaseUrl='https://mumbai.polygonscan.com/';
+
+
+
+/*
+** Methods used by carpooling and factory contracts
+*/
+
+// Utility method for creating the contract instance
+export function createContractInstance(address, abi, type){
+    // var    address = addr;
+    console.log("address", address)
+    
+    var instance;
+    try {
+        instance = new web3.eth.Contract(abi, address);
+        if(type=="carpooling"){
+            instance.methods.owner().call()
+        }else{instance.methods.admin().call()}
+        setExecuteResultUI('Call',type,'', "Instance created",'',false);
+    }
+    catch(error) {
+        setExecuteResultUI('Call',type,'', "Error, wrong address ?!",'',true);
+        console.log(error.message);
+        instance = null;
+    }
+
+    return instance;
+}
 
 
 export function setData(docElementId, html, errored) {
@@ -16,7 +44,6 @@ export function setData(docElementId, html, errored) {
     if (errored) document.getElementById(docElementId).classList = 'notready';
     else document.getElementById(docElementId).classList = 'ready';
 }
-
 
 // Since some of the functons/API are not available based on the
 // Node type - this function disables certainelements
@@ -31,7 +58,6 @@ export function    setUIBasedOnNodeType(){
     // This simply creates the JSON for default transaction object
     generateTransactionJSON();
 }
-
 
 /**
  * Creates a list item for the account in the account list
@@ -96,12 +122,6 @@ function    addOptionToSelect(selectId, text, value){
     option.value = value;
     var select = document.getElementById(selectId);
     select.appendChild(option)
-
-    // lets try data list add 
-    // select = document.getElementById("browsers");
-    // option = document.createElement('OPTION');
-    // option.text=text
-    // select.appendChild(option)
 }
 
 /**
@@ -132,12 +152,6 @@ export function    createTransactionObjectJson(){
         transObject.nonce = document.getElementById('send_nonce').value;
 
     return transObject;
-}
-
-// The byte code for the 
-function copyBytecodeInterfaceToUI(){
-    document.getElementById('compiled_bytecode').value=(contract_bytecode);
-    document.getElementById('compiled_abidefinition').value=(contract_abidefinition);
 }
 
 /**
@@ -269,13 +283,3 @@ export function    clearList(listId){
         list.removeChild(list.childNodes[i]);
     }
 }
-
-/**
- * Adds the CONTRACT watch event to the list box 
- */
-function    addContractEventListItem(listId, childData, len){
-    console.log(JSON.stringify(childData))
-}
-
-
-
