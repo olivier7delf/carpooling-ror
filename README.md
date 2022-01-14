@@ -2,10 +2,12 @@
 
 This project integrates notions of:
 - Blockchain, based on the project  https://github.com/olivier7delf/carpooling-poc
-- Web using web3.js and Ruby on Rails
+- Web using web3.js and Ruby on Rails, website: https://carpooling-ror.herokuapp.com/
 
 The UI is meant to test functionalities in test and production environments.
 If you are interested in UI design with RoR & bootstrap (No blockchain): https://github.com/olivier7delf/Bro-Bet
+
+
 
 Tech:
 - Blockchain:
@@ -66,20 +68,20 @@ app/assets/stylesheets/applications.scss
 # 2) Description and functionnalities
 
 # What can I do with the interface?
+
 Connect to a blockchain:
 - Locally: using ganache (caution to the setting truffle-config.js and ganache)
           or you can setup a local blockchain
-- Polygon mumbai: using Metamask
-- Polygon mainnet: using Metamask
+- Polygon mainnet, mumbai, or an other crypto: using Metamask
 
 Interact with CarpoolingFactory.
 
 Interact with Carpooling. (TODO)
 
 # How to use it?
-locally: type the http local url
+locally: type the http local url, e.g:"http://localhost:8545", and click on connect
 
-Polygon: clear it, and click on connect.
+Polygon (or an other crypto): clear it, and click on connect.
 - A popup will ask to connect to your wallet, accept. (! Always use a sandbox Wallet with a few Matics to avoid any issues !)
 
 You can:
